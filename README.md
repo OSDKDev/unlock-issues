@@ -15,7 +15,7 @@ Sample file: `.github/workflows/unlock-reopened-issues.yml`
         types: [reopened]
 
     jobs:
-      triage:
+      unlock:
         runs-on: ubuntu-latest
         steps:
         - uses: Dunning-Kruger/unlock-issues@v1
