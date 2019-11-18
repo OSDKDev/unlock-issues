@@ -1,13 +1,12 @@
-Automatically unlock context issue, most commonly used on "reopened" event.
+Unlock an issue. By default, it uses the context's but can be targetted.
 
-To add it to your workflow:
+### Targetting context's issue:
 
-    - uses: OSDKDev/unlock-issues@v1
+    - uses: OSDKDev/unlock-issues@v1.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         
-Sample file: `.github/workflows/unlock-reopened-issues.yml`
-
+#### Sample file: `.github/workflows/unlock-reopened-issues.yml`
     name: Unlock reopened issue
 
     on: 
@@ -15,11 +14,20 @@ Sample file: `.github/workflows/unlock-reopened-issues.yml`
         types: [reopened]
 
     jobs:
-      unlock:
+      lock:
         runs-on: ubuntu-latest
         steps:
-        - uses: OSDKDev/unlock-issues@v1
+        - uses: OSDKDev/unlock-issues@v1.1
           with:
             repo-token: "${{ secrets.GITHUB_TOKEN }}"
         
 As simple as that!
+
+### Targetting a specific issue / repo:
+
+    - uses: OSDKDev/unlock-issues@v1.1
+      with:
+        repo-token: {Token with permissions over the target repository / issue}
+        owner-name: {Owner Name - Optional - Default: Context's Repository Owner}
+        repo-name: {Repository Name - Optional - Default: Context's Repository}
+        issue-number: {Issue Number - Optional - Default: Context's Issue}
