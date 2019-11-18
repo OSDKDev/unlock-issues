@@ -1,4 +1,4 @@
-Automatically unlock issues, most commonly used on "reopened" event.
+Automatically unlock context issue, most commonly used on "reopened" event.
 
 To add it to your workflow:
 
